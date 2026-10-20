@@ -74,6 +74,8 @@ npx supabase db push                                    # applique les migration
 ```
 
 `db push` n'exécute **pas** `supabase/seed.sql` : la production démarre sans donnée de démonstration.
+Pour reprendre les catégories, produits et textes de la maquette, collez `supabase/seed-production.sql`
+dans l'éditeur SQL du tableau de bord, puis ajoutez les photos depuis l'administration.
 
 | Migration | Contenu |
 | --- | --- |
