@@ -1,7 +1,10 @@
 import type { ReactNode } from "react";
 
-export const inputStyles =
-  "block w-full rounded-card border border-line bg-surface px-4 py-2.5 text-base text-ink placeholder:text-ink-soft/70 focus:border-cocoa focus:outline-none focus:ring-2 focus:ring-cocoa/20 aria-[invalid=true]:border-clay sm:text-sm";
+/** Chevron des listes déroulantes : la flèche native ignore la marge intérieure et colle au bord. */
+const SELECT_CHEVRON =
+  "[select&]:appearance-none [select&]:bg-[url(data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2024%2024%27%20fill=%27none%27%20stroke=%27%237a665c%27%20stroke-width=%272%27%20stroke-linecap=%27round%27%20stroke-linejoin=%27round%27%3E%3Cpath%20d=%27m6%209%206%206%206-6%27/%3E%3C/svg%3E)] [select&]:bg-size-[1rem] [select&]:bg-position-[right_1rem_center] [select&]:bg-no-repeat [select&]:pr-11";
+
+export const inputStyles = `block w-full rounded-card border border-line bg-surface px-4 py-2.5 text-base text-ink placeholder:text-ink-soft/70 focus:border-cocoa focus:outline-none focus:ring-2 focus:ring-cocoa/20 aria-[invalid=true]:border-clay sm:text-sm ${SELECT_CHEVRON}`;
 
 export function Field({
   id,
