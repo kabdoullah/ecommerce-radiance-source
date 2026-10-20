@@ -61,6 +61,7 @@ export function AdminNavLinks({ pathname }: { pathname: string | null }) {
       <div className="hidden px-6 py-6 lg:block">
         <Link href="/" target="_blank" className="text-sm text-cocoa hover:underline">
           Voir la boutique
+          <span className="sr-only"> (nouvel onglet)</span>
         </Link>
       </div>
     </nav>

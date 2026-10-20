@@ -32,7 +32,11 @@ export function CheckoutView({
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
 
   if (status === "loading") {
-    return <div className="mt-8 h-64 animate-pulse rounded-card bg-mist" aria-label="Chargement" />;
+    return (
+      <div className="mt-8 h-64 animate-pulse rounded-card bg-mist" role="status">
+        <span className="sr-only">Chargement…</span>
+      </div>
+    );
   }
   if (status === "error") {
     return (

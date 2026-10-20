@@ -46,7 +46,8 @@ export function ReviewCarousel({ reviews }: { reviews: PublicReview[] }) {
           >
             <ChevronLeft className="size-5" aria-hidden="true" />
           </button>
-          <div className="flex gap-2">
+          <div className="flex">
+            {/* Zone cliquable de 24 px autour d'une pastille de 8 px (cible tactile minimale). */}
             {reviews.map((item, dot) => (
               <button
                 key={item.id}
@@ -54,8 +55,13 @@ export function ReviewCarousel({ reviews }: { reviews: PublicReview[] }) {
                 onClick={() => setIndex(dot)}
                 aria-label={`Afficher l'avis ${dot + 1}`}
                 aria-current={dot === index}
-                className={`size-2 rounded-full ${dot === index ? "bg-cocoa" : "bg-line"}`}
-              />
+                className="flex size-6 items-center justify-center rounded-full"
+              >
+                <span
+                  className={`size-2 rounded-full ${dot === index ? "bg-cocoa" : "bg-line"}`}
+                  aria-hidden="true"
+                />
+              </button>
             ))}
           </div>
           <button

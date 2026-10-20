@@ -36,9 +36,10 @@ export function ProductCard({
       </div>
       <div className="flex flex-1 flex-col items-center px-1 pb-1 pt-3 text-center">
         <h3 className="text-sm font-semibold leading-snug">
+          {/* Le lien couvre toute la carte (::after) ; le bouton Commander passe au-dessus. */}
           <Link
             href={`/produits/${product.slug}`}
-            className="hover:text-cocoa hover:underline hover:underline-offset-4"
+            className="after:absolute after:inset-0 after:rounded-card group-hover:text-cocoa group-hover:underline group-hover:underline-offset-4 focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-3 focus-visible:after:outline-cocoa"
           >
             {product.name}
           </Link>
@@ -56,7 +57,7 @@ export function ProductCard({
             </span>
           )}
         </p>
-        <div className="mt-auto w-full pt-3">
+        <div className={`mt-auto w-full pt-3 ${soldOut ? "" : "relative z-10"}`}>
           <OrderNowButton
             productId={product.id}
             disabled={soldOut}

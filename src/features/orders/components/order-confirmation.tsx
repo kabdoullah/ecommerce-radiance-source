@@ -27,7 +27,11 @@ export function OrderConfirmation() {
   }, [lastOrder]);
 
   if (lastOrder === undefined) {
-    return <div className="mt-8 h-64 animate-pulse rounded-card bg-mist" aria-label="Chargement" />;
+    return (
+      <div className="mt-8 h-64 animate-pulse rounded-card bg-mist" role="status">
+        <span className="sr-only">Chargement…</span>
+      </div>
+    );
   }
 
   if (lastOrder === null) {

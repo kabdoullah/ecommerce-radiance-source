@@ -92,7 +92,7 @@ export function ProductImagesManager({
                 <Button
                   variant="ghost"
                   size="sm"
-                  aria-label="Monter la photo"
+                  aria-label={`Monter la photo ${index + 1}`}
                   disabled={index === 0 || pending}
                   onClick={() => move(image.id, "up")}
                 >
@@ -101,7 +101,7 @@ export function ProductImagesManager({
                 <Button
                   variant="ghost"
                   size="sm"
-                  aria-label="Descendre la photo"
+                  aria-label={`Descendre la photo ${index + 1}`}
                   disabled={index === images.length - 1 || pending}
                   onClick={() => move(image.id, "down")}
                 >
@@ -122,7 +122,7 @@ export function ProductImagesManager({
 
       <div>
         <label
-          className={`inline-flex cursor-pointer items-center gap-2 rounded-full border border-dashed border-cocoa px-5 py-3 text-sm font-semibold text-cocoa hover:bg-cocoa/5 ${
+          className={`inline-flex cursor-pointer items-center gap-2 rounded-full border border-dashed border-cocoa px-5 py-3 text-sm font-semibold text-cocoa hover:bg-cocoa/5 has-[input:focus-visible]:outline-2 has-[input:focus-visible]:outline-offset-3 has-[input:focus-visible]:outline-cocoa ${
             uploading ? "pointer-events-none opacity-60" : ""
           }`}
         >

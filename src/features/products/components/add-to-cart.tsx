@@ -36,7 +36,7 @@ export function AddToCart({
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap items-center gap-3">
-        <div className="flex h-12 items-center rounded-full border border-line bg-surface">
+        <div className="flex h-12 items-center rounded-full border border-line bg-surface has-[input:focus-visible]:outline-2 has-[input:focus-visible]:outline-offset-3 has-[input:focus-visible]:outline-cocoa">
           <button
             type="button"
             onClick={() => update(quantity - 1)}

@@ -18,10 +18,9 @@ export function CartView({ deliveryFee }: { deliveryFee: number | null }) {
 
   if (status === "loading") {
     return (
-      <div
-        className="mt-8 h-48 animate-pulse rounded-card bg-mist"
-        aria-label="Chargement du panier"
-      />
+      <div className="mt-8 h-48 animate-pulse rounded-card bg-mist" role="status">
+        <span className="sr-only">Chargement du panier…</span>
+      </div>
     );
   }
 

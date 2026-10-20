@@ -10,6 +10,12 @@ export const instant = false;
 export default function AdminPanelLayout({ children }: LayoutProps<"/admin">) {
   return (
     <div className="flex-1 lg:grid lg:grid-cols-[15rem_1fr]">
+      <a
+        href="#contenu"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-2 focus:z-10 focus:rounded focus:bg-surface focus:px-3 focus:py-2"
+      >
+        Aller au contenu
+      </a>
       <Suspense fallback={<AdminNavLinks pathname={null} />}>
         <AdminNav />
       </Suspense>
@@ -39,14 +45,17 @@ async function AdminGate({ children }: { children: ReactNode }) {
           </button>
         </form>
       </div>
-      <main className="px-4 py-8 sm:px-8">{children}</main>
+      <main id="contenu" className="px-4 py-8 sm:px-8">
+        {children}
+      </main>
     </>
   );
 }
 
 function PanelSkeleton() {
   return (
-    <div className="space-y-4 px-4 py-14 sm:px-8" aria-busy="true" aria-label="Chargement">
+    <div className="space-y-4 px-4 py-14 sm:px-8" role="status">
+      <span className="sr-only">Chargement…</span>
       <div className="h-10 w-64 rounded bg-mist" />
       <div className="h-48 rounded-card bg-mist" />
     </div>

@@ -52,7 +52,7 @@ export function ImageField({
         </div>
         <div className="flex flex-wrap gap-2">
           <label
-            className={`inline-flex h-9 cursor-pointer items-center rounded-full border border-ink/25 bg-surface px-4 text-sm font-semibold hover:border-ink/60 ${
+            className={`inline-flex h-9 cursor-pointer items-center rounded-full border border-ink/25 bg-surface px-4 text-sm font-semibold hover:border-ink/60 has-[input:focus-visible]:outline-2 has-[input:focus-visible]:outline-offset-3 has-[input:focus-visible]:outline-cocoa ${
               uploading ? "pointer-events-none opacity-60" : ""
             }`}
           >

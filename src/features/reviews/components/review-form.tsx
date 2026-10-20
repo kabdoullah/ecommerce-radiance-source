@@ -39,14 +39,26 @@ export function ReviewForm({ productId }: { productId: string }) {
         <div className="mt-2 flex flex-wrap gap-1">
           {[1, 2, 3, 4, 5].map((value) => (
             <label key={value} className="cursor-pointer">
-              <input type="radio" name="rating" value={value} className="peer sr-only" required />
+              <input
+                type="radio"
+                name="rating"
+                value={value}
+                className="peer sr-only"
+                required
+                aria-describedby={errors.rating ? "rating-error" : undefined}
+              />
               <span className="flex h-10 min-w-12 items-center justify-center rounded-full border border-line px-3 text-sm peer-checked:border-cocoa peer-checked:bg-cocoa peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-cocoa">
-                {value} ★
+                {value} <span aria-hidden="true">★</span>
+                <span className="sr-only">sur 5</span>
               </span>
             </label>
           ))}
         </div>
-        {errors.rating && <p className="mt-1 text-sm text-clay">{errors.rating}</p>}
+        {errors.rating && (
+          <p id="rating-error" className="mt-1 text-sm text-clay" role="alert">
+            {errors.rating}
+          </p>
+        )}
       </fieldset>
       <Field id="comment" label="Votre avis" error={errors.comment}>
         <textarea
