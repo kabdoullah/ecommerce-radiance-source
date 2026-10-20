@@ -37,6 +37,9 @@ update public.store_settings set
   payment_summary = 'Paiement à la livraison ou mobile money',
   payment_info = 'À la livraison ou via Mobile Money (MTN, Orange).',
   delivery_fee = null,
+  facebook_url = 'https://www.facebook.com/',
+  instagram_url = 'https://www.instagram.com/',
+  tiktok_url = 'https://www.tiktok.com/',
   hero_title = '',
   hero_script = 'Votre beauté, notre passion.',
   hero_subtitle = 'Découvrez notre sélection de produits de beauté et de soins pour révéler votre éclat naturel.',
@@ -81,3 +84,18 @@ Laisse la peau douce et éclatante',
    '', '', '', '', '', 11000, null, 'aaaaaaaa-0000-0000-0000-000000000005', true, false, 0),
   ('Brouillon non publié', 'brouillon-non-publie', '', 'Produit non publié : il n''apparaît pas sur la boutique.',
    '', '', '', '', '', 5000, null, 'aaaaaaaa-0000-0000-0000-000000000003', false, false, null);
+
+-- Avis publiés (bloc « Elles nous font confiance » et note de la fiche produit).
+-- Le premier avis de la liste est le plus récent : c'est lui que le carrousel affiche d'abord.
+insert into public.reviews (product_id, author_name, rating, comment, status, created_at)
+select p.id, r.author_name, r.rating, r.comment, r.status::public.review_status,
+  now() - (r.ord * interval '1 day')
+from (values
+  ('kiara-clear', 'Aminata K.', 5, 'J''ai testé le gel douche Kiara-Clear et ma peau est vraiment plus douce et lumineuse. Je suis très satisfaite ! Merci Source d''Éclat !', 'approved', 1),
+  ('kiara-clear', 'Fatou D.', 5, 'Il sent bon et l''exfoliation reste douce, même sur peau sensible.', 'approved', 2),
+  ('kiara-clear', 'Mariam T.', 4, 'Très bon gel douche, livré en 48h à Yopougon.', 'approved', 3),
+  ('savon-noir', 'Awa B.', 5, 'Mes petits boutons ont nettement diminué en deux semaines.', 'approved', 4),
+  ('ly-soai', 'Christelle N.', 5, 'L''odeur vanille et miel est un vrai plaisir le matin.', 'approved', 5),
+  ('ly-soai-coco', 'Kadi S.', 4, 'Peau hydratée toute la journée, je recommande.', 'pending', 6)
+) as r (slug, author_name, rating, comment, status, ord)
+join public.products p on p.slug = r.slug;

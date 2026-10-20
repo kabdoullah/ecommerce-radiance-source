@@ -135,11 +135,12 @@ Elles vont dans `.env.local` en local (ignoré par git) et dans Netlify
 ```bash
 npx supabase start          # PostgreSQL, Auth et Storage dans Docker
 npx supabase db reset       # migrations + données de démonstration
-npm run dev                 # http://localhost:3000
+npm run dev:local           # http://localhost:3000, branché sur la base locale
 ```
 
-`npx supabase start` affiche l'URL (`http://127.0.0.1:54321`) et la clé *publishable* à placer
-dans `.env.local`. Les données de démonstration (`supabase/seed.sql`) contiennent des produits
+`npm run dev:local` force l'URL (`http://127.0.0.1:54321`) et la clé *publishable* par défaut de la
+stack locale, quel que soit le contenu de `.env.local`. `npm run dev` utilise `.env.local`
+(par exemple le projet Supabase de production). Les données de démonstration (`supabase/seed.sql`) contiennent des produits
 marqués « (démo) » et un administrateur **local uniquement** : `admin@example.com` / `admin-local-2026`.
 
 ## 9. Tests et vérifications
