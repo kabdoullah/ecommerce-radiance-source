@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/*
+ * Identité Source d'Éclat (d'après la maquette) — tous les jetons visuels sont ici.
+ */
+@theme {
+  --color-ink: #3b2a22;
+  --color-ink-soft: #7a665c;
+  --color-paper: #fdf8f5;
+  --color-surface: #ffffff;
+  --color-mist: #f8eee9;
+  --color-blush: #f4e2da;
+  --color-line: #ecdcd3;
+  --color-cocoa: #7a4b30;
+  --color-cocoa-deep: #5f3a25;
+  --color-caramel: #b88a5e;
+  --color-clay: #b5482f;
+  --color-success: #3f7a46;
+  --color-whatsapp: #25d366;
+
+  --font-display: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-script: var(--font-script-face), "Great Vibes", cursive;
+  --font-sans: var(--font-montserrat), system-ui, sans-serif;
+
+  --radius-card: 0.75rem;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-cocoa);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--color-blush);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-page {
+      padding-inline: 2rem;
+    }
+  }
+
+  /* Titre de section encadré de deux filets (« — Nos produits phares — »). */
+  .section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .section-title::before,
+    .section-title::after {
+      content: "";
+      width: 2.5rem;
+      height: 1px;
+      background: var(--color-caramel);
+    }
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-rise {
+  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}

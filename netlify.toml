@@ -1,0 +1,7 @@
+# Netlify détecte Next.js et ajoute automatiquement son adaptateur : ne pas l'installer à la main.
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
