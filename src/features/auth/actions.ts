@@ -33,11 +33,22 @@ export async function login(_previous: LoginState, formData: FormData): Promise<
     return { error: "Connexion impossible pour le moment. Réessayez dans quelques instants." };
   }
 
-  const { data: profile } = await supabase
+  const { data: profile, error: profileError } = await supabase
     .from("admin_profiles")
     .select("id")
     .eq("id", data.user.id)
     .maybeSingle();
+
+  if (profileError) {
+    // Table absente (migrations non appliquées) ou base injoignable : ne pas confondre
+    // avec un compte sans droits.
+    console.error("admin_profiles lookup failed", profileError.code, profileError.message);
+    await supabase.auth.signOut();
+    return {
+      error:
+        "Impossible de vérifier les droits administrateur : la base de données n'est pas prête (migrations à appliquer) ou ne répond pas.",
+    };
+  }
 
   if (!profile) {
     await supabase.auth.signOut();
