@@ -18,11 +18,8 @@ export function OrderConfirmation() {
   const lastOrder = useSyncExternalStore(noopSubscribe, getSnapshot, () => undefined);
 
   // Ouverture automatique de WhatsApp, une seule fois (pas de boucle au retour arrière).
-  // Sauf sur Android : Chrome n'y passe la main à l'application que sur un appui de
-  // l'utilisateur, une redirection par script reste sur la page web de WhatsApp.
   useEffect(() => {
     if (!lastOrder?.whatsappUrl || lastOrder.redirected) return;
-    if (/Android/i.test(navigator.userAgent)) return;
     const url = lastOrder.whatsappUrl;
     saveLastOrder({ ...lastOrder, redirected: true });
     const timer = window.setTimeout(() => window.location.assign(url), 1200);
