@@ -193,7 +193,7 @@ export default async function HomePage() {
         </div>
 
         {reviews.length > 0 && (
-          <div id="avis" className="scroll-mt-24 rounded-2xl bg-mist p-7 sm:p-9">
+          <div id="avis" className="flex scroll-mt-24 flex-col rounded-2xl bg-mist p-7 sm:p-9">
             <h2 className="font-display text-2xl font-bold text-cocoa">Elles nous font confiance</h2>
             <p className="mb-6 mt-1 text-sm text-ink-soft">Découvrez les avis de nos clientes</p>
             <ReviewCarousel reviews={reviews} />

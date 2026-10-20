@@ -19,8 +19,8 @@ export function ReviewCarousel({ reviews }: { reviews: PublicReview[] }) {
   const go = (delta: number) => setIndex((index + delta + reviews.length) % reviews.length);
 
   return (
-    <div>
-      <figure className="flex gap-4 rounded-card bg-surface p-5 shadow-sm" aria-live="polite">
+    <div className="flex flex-1 flex-col">
+      <figure className="flex flex-1 gap-4 rounded-card bg-surface p-5 shadow-sm" aria-live="polite">
         <span
           className="flex size-14 shrink-0 items-center justify-center rounded-full bg-blush font-display text-lg text-cocoa"
           aria-hidden="true"
