@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 export const inputStyles =
-  "block w-full rounded-md border border-line bg-surface px-3 py-2.5 text-base text-ink placeholder:text-ink-soft/70 focus:border-cocoa focus:outline-none focus:ring-2 focus:ring-cocoa/20 aria-[invalid=true]:border-clay sm:text-sm";
+  "block w-full rounded-card border border-line bg-surface px-4 py-2.5 text-base text-ink placeholder:text-ink-soft/70 focus:border-cocoa focus:outline-none focus:ring-2 focus:ring-cocoa/20 aria-[invalid=true]:border-clay sm:text-sm";
 
 export function Field({
   id,
@@ -53,7 +53,7 @@ export function FormMessage({ tone, children }: { tone: "error" | "success"; chi
   return (
     <p
       role={tone === "error" ? "alert" : "status"}
-      className={`rounded-md px-4 py-3 text-sm ${
+      className={`rounded-card px-4 py-3 text-sm ${
         tone === "error" ? "bg-clay/10 text-clay" : "bg-success/10 text-success"
       }`}
     >
