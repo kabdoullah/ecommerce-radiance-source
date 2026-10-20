@@ -60,7 +60,7 @@ export function ProductCard({
           <OrderNowButton
             productId={product.id}
             disabled={soldOut}
-            className="w-full gap-1.5 whitespace-nowrap px-2 text-[0.6875rem]"
+            className="w-full gap-1! whitespace-nowrap px-2! text-[0.6875rem]"
           />
         </div>
       </div>

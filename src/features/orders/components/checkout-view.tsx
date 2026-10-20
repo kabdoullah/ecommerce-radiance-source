@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useTransition, type FormEvent } from "react";
+import { WhatsAppIcon } from "@/components/brand/social-icons";
 import { Button, buttonStyles } from "@/components/ui/button";
 import { Field, FormMessage, fieldA11y, inputStyles } from "@/components/ui/field";
 import { cartSubtotal } from "@/features/cart/cart-math";
@@ -171,6 +172,7 @@ export function CheckoutView({
           className="w-full sm:w-auto"
           disabled={pending || hasProblem}
         >
+          <WhatsAppIcon className="size-5" />
           {pending ? "Enregistrement de la commande…" : "Valider et envoyer sur WhatsApp"}
         </Button>
         <p className="text-xs text-ink-soft">

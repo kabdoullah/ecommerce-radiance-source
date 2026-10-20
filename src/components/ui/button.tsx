@@ -17,7 +17,7 @@ const SIZES: Record<Size, string> = {
 };
 
 export function buttonStyles(variant: Variant = "primary", size: Size = "md", extra = ""): string {
-  return `inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${VARIANTS[variant]} ${SIZES[size]} ${extra}`;
+  return `inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors [&>svg]:shrink-0 disabled:cursor-not-allowed disabled:opacity-50 ${VARIANTS[variant]} ${SIZES[size]} ${extra}`;
 }
 
 export function Button({
