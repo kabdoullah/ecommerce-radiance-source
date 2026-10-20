@@ -122,8 +122,8 @@ utilisateur (étapes 1–2) puis supprimez l'ancien.
 
 | Variable | Obligatoire | Où la trouver |
 | --- | --- | --- |
-| `NEXT_PUBLIC_SUPABASE_URL` | oui | Supabase → Project Settings → API |
-| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | oui | Supabase → API Keys → *publishable* |
+| `NEXT_PUBLIC_SUPABASE_URL` | oui | Bouton vert **Connect** en haut du tableau de bord, ou *Integrations → Data API → Project URL* (forme `https://<project-id>.supabase.co`) |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | oui | Bouton **Connect**, ou *Settings → API Keys → Publishable key* (`sb_publishable_…`) |
 | `NEXT_PUBLIC_SITE_URL` | non | URL publique sans `/` final. Sur Netlify, la variable `URL` est utilisée par défaut. |
 
 Ces valeurs sont publiques par conception : la sécurité repose sur les politiques RLS.
