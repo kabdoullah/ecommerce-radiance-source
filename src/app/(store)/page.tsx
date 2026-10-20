@@ -13,7 +13,6 @@ import Link from "next/link";
 import { LogoMark } from "@/components/brand/logo";
 import { WhatsAppIcon } from "@/components/brand/social-icons";
 import { ProductGrid } from "@/components/shared/product-card";
-import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { buttonStyles } from "@/components/ui/button";
 import { CategoryIconBadge } from "@/features/categories/icons";
 import { getActiveCategories } from "@/features/categories/queries";
@@ -227,7 +226,7 @@ export default async function HomePage() {
             <InfoItem icon={Headset} title="Une question ?">
               <p>Contactez-nous sur WhatsApp</p>
               {whatsappHref && (
-                <WhatsAppLink
+                <a
                   href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -235,7 +234,7 @@ export default async function HomePage() {
                 >
                   <WhatsAppIcon className="size-4" />
                   {settings.contact_phone || "Écrire sur WhatsApp"}
-                </WhatsAppLink>
+                </a>
               )}
             </InfoItem>
           </div>

@@ -4,7 +4,6 @@ import { CircleCheck, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useSyncExternalStore } from "react";
 import { buttonStyles } from "@/components/ui/button";
-import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { formatPrice } from "@/lib/utils/format";
 import { readLastOrder, saveLastOrder, type LastOrder } from "../last-order";
 
@@ -67,10 +66,10 @@ export function OrderConfirmation() {
             : "Nous vous contacterons au numéro indiqué pour confirmer la livraison et le mode de paiement. Votre commande n'est pas encore payée."}
         </p>
         {whatsappUrl && (
-          <WhatsAppLink href={whatsappUrl} className={buttonStyles("primary", "lg", "mt-8")}>
+          <a href={whatsappUrl} className={buttonStyles("primary", "lg", "mt-8")}>
             <MessageCircle className="size-5" aria-hidden="true" />
             Envoyer sur WhatsApp
-          </WhatsAppLink>
+          </a>
         )}
         <p className="mt-6">
           <Link href="/boutique" className="text-sm font-semibold text-bordeaux hover:underline">
