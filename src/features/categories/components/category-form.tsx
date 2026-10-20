@@ -105,7 +105,7 @@ export function CategoryForm({ category }: { category?: Category }) {
           type="checkbox"
           name="isActive"
           defaultChecked={category?.is_active ?? true}
-          className="size-4 accent-cocoa"
+          className="size-4 accent-bordeaux"
         />
         Visible sur la boutique
       </label>

@@ -35,7 +35,7 @@ export default async function DashboardPage() {
           <li key={counter.label}>
             <Link
               href={counter.href}
-              className="block rounded-card border border-line bg-surface p-5 hover:border-cocoa"
+              className="block rounded-card border border-line bg-surface p-5 hover:border-bordeaux"
             >
               <span className="block text-3xl font-semibold">{counter.value}</span>
               <span className="mt-1 block text-sm text-ink-soft">{counter.label}</span>

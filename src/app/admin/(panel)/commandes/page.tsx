@@ -112,7 +112,7 @@ export default async function OrdersPage({ searchParams }: PageProps<"/admin/com
                   <td className="px-4 py-3">
                     <Link
                       href={`/admin/commandes/${order.id}`}
-                      className="font-semibold text-cocoa hover:underline"
+                      className="font-semibold text-bordeaux hover:underline"
                     >
                       {order.order_number}
                     </Link>

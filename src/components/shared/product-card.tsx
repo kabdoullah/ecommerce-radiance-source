@@ -27,7 +27,7 @@ export function ProductCard({
         {(soldOut || onSale) && (
           <span
             className={`absolute left-2 top-2 rounded-full px-2.5 py-1 text-[0.6875rem] font-semibold ${
-              soldOut ? "bg-surface text-ink" : "bg-clay text-white"
+              soldOut ? "bg-surface text-ink" : "bg-fuchsia text-white"
             }`}
           >
             {soldOut ? "Épuisé" : "Promotion"}
@@ -39,14 +39,14 @@ export function ProductCard({
           {/* Le lien couvre toute la carte (::after) ; le bouton Commander passe au-dessus. */}
           <Link
             href={`/produits/${product.slug}`}
-            className="after:absolute after:inset-0 after:rounded-card group-hover:text-cocoa group-hover:underline group-hover:underline-offset-4 focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-3 focus-visible:after:outline-cocoa"
+            className="after:absolute after:inset-0 after:rounded-card group-hover:text-bordeaux group-hover:underline group-hover:underline-offset-4 focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-3 focus-visible:after:outline-bordeaux"
           >
             {product.name}
           </Link>
         </h3>
         {product.subtitle && <p className="mt-0.5 text-xs text-ink-soft">{product.subtitle}</p>}
         <p className="mt-2 flex flex-wrap items-baseline justify-center gap-x-2">
-          <span className="text-base font-bold text-cocoa">
+          <span className="text-base font-bold text-bordeaux">
             {onSale && <span className="sr-only">Prix réduit : </span>}
             {formatPrice(product.price)}
           </span>

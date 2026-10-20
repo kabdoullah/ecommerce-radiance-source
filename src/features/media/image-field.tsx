@@ -52,7 +52,7 @@ export function ImageField({
         </div>
         <div className="flex flex-wrap gap-2">
           <label
-            className={`inline-flex h-9 cursor-pointer items-center rounded-full border border-ink/25 bg-surface px-4 text-sm font-semibold hover:border-ink/60 has-[input:focus-visible]:outline-2 has-[input:focus-visible]:outline-offset-3 has-[input:focus-visible]:outline-cocoa ${
+            className={`inline-flex h-9 cursor-pointer items-center rounded-full border border-ink/25 bg-surface px-4 text-sm font-semibold hover:border-ink/60 has-[input:focus-visible]:outline-2 has-[input:focus-visible]:outline-offset-3 has-[input:focus-visible]:outline-bordeaux ${
               uploading ? "pointer-events-none opacity-60" : ""
             }`}
           >
@@ -80,7 +80,7 @@ export function ImageField({
         <p className="text-xs font-medium">Pensez à enregistrer pour appliquer ce changement.</p>
       )}
       {error && (
-        <p role="alert" className="text-sm text-clay">
+        <p role="alert" className="text-sm text-error">
           {error}
         </p>
       )}

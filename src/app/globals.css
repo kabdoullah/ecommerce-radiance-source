@@ -1,20 +1,22 @@
 @import "tailwindcss";
 
 /*
- * Identité Source d'Éclat (d'après la maquette) — tous les jetons visuels sont ici.
+ * Identité Source d'Éclat (palette bordeaux / framboise / or champagne) — tous les jetons visuels sont ici.
  */
 @theme {
-  --color-ink: #3b2a22;
-  --color-ink-soft: #7a665c;
-  --color-paper: #fdf8f5;
+  --color-ink: #2f1a21;
+  --color-ink-soft: #7d6168;
+  --color-paper: #fff8f5;
   --color-surface: #ffffff;
-  --color-mist: #f8eee9;
-  --color-blush: #f4e2da;
-  --color-line: #ecdcd3;
-  --color-cocoa: #7a4b30;
-  --color-cocoa-deep: #5f3a25;
-  --color-caramel: #b88a5e;
-  --color-clay: #b5482f;
+  --color-mist: #fdeeee;
+  --color-blush: #f9e1e7;
+  --color-line: #f0dbe0;
+  --color-bordeaux: #720026;
+  --color-bordeaux-deep: #4f001a;
+  --color-fuchsia: #e91e63;
+  --color-raspberry: #c2185b;
+  --color-gold: #d6ad60;
+  --color-error: #b3261e;
   --color-success: #3f7a46;
   --color-whatsapp: #25d366;
 
@@ -37,7 +39,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-cocoa);
+    outline: 2px solid var(--color-bordeaux);
     outline-offset: 3px;
   }
 
@@ -83,7 +85,7 @@
       content: "";
       width: 2.5rem;
       height: 1px;
-      background: var(--color-caramel);
+      background: var(--color-gold);
     }
   }
 }

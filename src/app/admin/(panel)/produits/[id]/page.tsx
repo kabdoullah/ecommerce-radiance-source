@@ -28,7 +28,7 @@ export default async function EditProductPage({
 
   return (
     <>
-      <Link href="/admin/produits" className="text-sm text-cocoa hover:underline">
+      <Link href="/admin/produits" className="text-sm text-bordeaux hover:underline">
         Retour aux produits
       </Link>
       <div className="mt-4">

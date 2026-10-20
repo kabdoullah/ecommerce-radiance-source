@@ -122,7 +122,7 @@ export function ProductImagesManager({
 
       <div>
         <label
-          className={`inline-flex cursor-pointer items-center gap-2 rounded-full border border-dashed border-cocoa px-5 py-3 text-sm font-semibold text-cocoa hover:bg-cocoa/5 has-[input:focus-visible]:outline-2 has-[input:focus-visible]:outline-offset-3 has-[input:focus-visible]:outline-cocoa ${
+          className={`inline-flex cursor-pointer items-center gap-2 rounded-full border border-dashed border-bordeaux px-5 py-3 text-sm font-semibold text-bordeaux hover:bg-bordeaux/5 has-[input:focus-visible]:outline-2 has-[input:focus-visible]:outline-offset-3 has-[input:focus-visible]:outline-bordeaux ${
             uploading ? "pointer-events-none opacity-60" : ""
           }`}
         >
@@ -175,7 +175,7 @@ function AltTextForm({ image }: { image: ImageRow }) {
       {state.status !== "idle" && (
         <p
           role="status"
-          className={`text-xs ${state.status === "error" ? "text-clay" : "text-success"}`}
+          className={`text-xs ${state.status === "error" ? "text-error" : "text-success"}`}
         >
           {state.message}
         </p>

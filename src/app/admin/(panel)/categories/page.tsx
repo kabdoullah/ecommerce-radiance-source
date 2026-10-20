@@ -52,7 +52,7 @@ export default async function AdminCategoriesPage() {
                     ) : (
                       <Badge>Masquée</Badge>
                     )}
-                    <span className="text-sm font-semibold text-cocoa group-open:hidden">
+                    <span className="text-sm font-semibold text-bordeaux group-open:hidden">
                       Modifier
                     </span>
                   </span>

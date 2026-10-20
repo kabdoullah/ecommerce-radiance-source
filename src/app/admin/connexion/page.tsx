@@ -8,7 +8,7 @@ export default function LoginPage() {
   return (
     <div className="flex flex-1 items-center justify-center px-4 py-16">
       <div className="w-full max-w-sm">
-        <LogoMark className="size-10 text-cocoa" />
+        <LogoMark className="size-10 text-bordeaux" />
         <h1 className="mt-6 font-display text-3xl">Administration de la boutique</h1>
         <p className="mt-2 text-sm text-ink-soft">
           Connectez-vous avec le compte administrateur qui vous a été attribué.

@@ -24,7 +24,7 @@ export async function SiteFooter() {
   ].filter((social) => Boolean(social.href));
 
   return (
-    <footer className="bg-cocoa-deep text-white/85">
+    <footer className="bg-bordeaux-deep text-white/85">
       <div className="container-page grid items-center gap-8 py-10 lg:grid-cols-[auto_1fr_auto]">
         <Logo
           name={settings.store_name}
@@ -56,7 +56,7 @@ export async function SiteFooter() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="flex size-9 items-center justify-center rounded-full bg-white text-cocoa-deep hover:bg-blush"
+                    className="flex size-9 items-center justify-center rounded-full bg-white text-bordeaux-deep hover:bg-blush"
                   >
                     <Icon className="size-4" />
                   </a>

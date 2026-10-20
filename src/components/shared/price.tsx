@@ -28,7 +28,7 @@ export function Price({
 
 export function StockLabel({ stockQuantity }: { stockQuantity: number | null }) {
   if (stockQuantity === 0) {
-    return <span className="text-sm font-medium text-clay">Rupture de stock</span>;
+    return <span className="text-sm font-medium text-error">Rupture de stock</span>;
   }
   if (stockQuantity !== null && stockQuantity <= 3) {
     return (

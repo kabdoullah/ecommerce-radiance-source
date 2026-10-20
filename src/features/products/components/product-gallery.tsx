@@ -23,7 +23,7 @@ export function ProductGallery({ images, name }: { images: ProductImageData[]; n
                 aria-label={`Afficher la photo ${index + 1}`}
                 aria-current={index === activeIndex}
                 className={`relative block aspect-[4/5] w-full overflow-hidden rounded-lg bg-mist ${
-                  index === activeIndex ? "ring-2 ring-cocoa" : "opacity-75 hover:opacity-100"
+                  index === activeIndex ? "ring-2 ring-bordeaux" : "opacity-75 hover:opacity-100"
                 }`}
               >
                 <Image src={mediaUrl(image.path)} alt="" fill sizes="64px" className="object-cover" />

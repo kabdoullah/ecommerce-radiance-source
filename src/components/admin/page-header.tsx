@@ -33,8 +33,8 @@ const BADGE_TONES = {
   neutral: "bg-mist text-ink",
   success: "bg-success/10 text-success",
   warning: "bg-blush text-ink",
-  danger: "bg-clay/10 text-clay",
-  info: "bg-cocoa/10 text-cocoa",
+  danger: "bg-error/10 text-error",
+  info: "bg-bordeaux/10 text-bordeaux",
 } as const;
 
 export function Badge({

@@ -36,7 +36,7 @@ export function AddToCart({
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap items-center gap-3">
-        <div className="flex h-12 items-center rounded-full border border-line bg-surface has-[input:focus-visible]:outline-2 has-[input:focus-visible]:outline-offset-3 has-[input:focus-visible]:outline-cocoa">
+        <div className="flex h-12 items-center rounded-full border border-line bg-surface has-[input:focus-visible]:outline-2 has-[input:focus-visible]:outline-offset-3 has-[input:focus-visible]:outline-bordeaux">
           <button
             type="button"
             onClick={() => update(quantity - 1)}
@@ -81,7 +81,7 @@ export function AddToCart({
           <span className="inline-flex flex-wrap items-center gap-2 text-success">
             <Check className="size-4" aria-hidden="true" />
             Ajouté au panier.
-            <Link href="/panier" className="font-semibold text-cocoa underline underline-offset-2">
+            <Link href="/panier" className="font-semibold text-bordeaux underline underline-offset-2">
               Voir le panier
             </Link>
           </span>
@@ -92,7 +92,7 @@ export function AddToCart({
               cartActions.add(productId, quantity);
               setAdded(true);
             }}
-            className="font-semibold text-cocoa underline underline-offset-2 hover:text-cocoa-deep"
+            className="font-semibold text-bordeaux underline underline-offset-2 hover:text-bordeaux-deep"
           >
             Ajouter au panier et continuer mes achats
           </button>

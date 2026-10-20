@@ -69,7 +69,7 @@ export function OrderConfirmation() {
           </a>
         )}
         <p className="mt-6">
-          <Link href="/boutique" className="text-sm font-semibold text-cocoa hover:underline">
+          <Link href="/boutique" className="text-sm font-semibold text-bordeaux hover:underline">
             Retour à la boutique
           </Link>
         </p>

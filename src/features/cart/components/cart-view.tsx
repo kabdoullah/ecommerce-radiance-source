@@ -85,7 +85,7 @@ export function CartView({ deliveryFee }: { deliveryFee: number | null }) {
                         {formatPrice(product.price)} l&apos;unité
                       </p>
                     )}
-                    {problem && <p className="text-sm font-medium text-clay">{problem}</p>}
+                    {problem && <p className="text-sm font-medium text-error">{problem}</p>}
                   </div>
                   <div className="flex items-center justify-between gap-4 sm:flex-col sm:items-end">
                     {product && product.stockQuantity !== 0 && (
@@ -105,7 +105,7 @@ export function CartView({ deliveryFee }: { deliveryFee: number | null }) {
                       <button
                         type="button"
                         onClick={() => cartActions.remove(line.productId)}
-                        className="inline-flex size-10 items-center justify-center rounded-full text-ink-soft hover:bg-mist hover:text-clay"
+                        className="inline-flex size-10 items-center justify-center rounded-full text-ink-soft hover:bg-mist hover:text-error"
                         aria-label={`Retirer ${name} du panier`}
                       >
                         <Trash2 className="size-4" aria-hidden="true" />
@@ -118,7 +118,7 @@ export function CartView({ deliveryFee }: { deliveryFee: number | null }) {
           })}
         </ul>
         <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-          <Link href="/boutique" className="text-sm font-semibold text-cocoa hover:underline">
+          <Link href="/boutique" className="text-sm font-semibold text-bordeaux hover:underline">
             Continuer mes achats
           </Link>
           {confirmClear ? (
@@ -158,7 +158,7 @@ export function CartView({ deliveryFee }: { deliveryFee: number | null }) {
           </div>
         </dl>
         {hasProblem && (
-          <p className="mt-4 text-sm text-clay">
+          <p className="mt-4 text-sm text-error">
             Retirez ou ajustez les articles signalés pour passer commande.
           </p>
         )}

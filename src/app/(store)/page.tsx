@@ -50,13 +50,13 @@ export default async function HomePage() {
             className="object-cover object-[70%_center]"
           />
         ) : (
-          <LogoMark className="absolute -right-10 top-1/2 size-[28rem] -translate-y-1/2 text-caramel/25" />
+          <LogoMark className="absolute -right-10 top-1/2 size-[28rem] -translate-y-1/2 text-gold/25" />
         )}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#fbefe9] via-[#fbefe9]/85 to-transparent md:via-[#fbefe9]/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-mist via-mist/85 to-transparent md:via-mist/60" />
         <div className="container-page relative grid min-h-[26rem] items-center gap-8 py-14 md:min-h-[30rem] md:grid-cols-[1fr_auto]">
           <div className="max-w-xl animate-rise">
-            <LogoMark className="mb-3 size-12 text-caramel" />
-            <h1 className="font-display text-5xl font-bold leading-tight text-cocoa sm:text-6xl">
+            <LogoMark className="mb-3 size-12 text-gold" />
+            <h1 className="font-display text-5xl font-bold leading-tight text-bordeaux sm:text-6xl">
               {settings.hero_title || settings.store_name}
             </h1>
             {settings.hero_script && (
@@ -71,7 +71,7 @@ export default async function HomePage() {
             </Link>
           </div>
           {settings.hero_side_quote && (
-            <p className="hidden max-w-[14rem] text-right font-script text-3xl leading-snug text-cocoa md:block">
+            <p className="hidden max-w-[14rem] text-right font-script text-3xl leading-snug text-fuchsia md:block">
               {settings.hero_side_quote}
             </p>
           )}
@@ -90,7 +90,7 @@ export default async function HomePage() {
                 >
                   <CategoryIconBadge
                     icon={category.icon}
-                    className="size-16 transition-colors group-hover:bg-cocoa group-hover:text-white sm:size-[4.5rem]"
+                    className="size-16 transition-colors group-hover:bg-bordeaux group-hover:text-white sm:size-[4.5rem]"
                   />
                   <span className="max-w-[9rem] text-xs font-semibold leading-snug sm:text-sm">
                     {category.name}
@@ -108,7 +108,7 @@ export default async function HomePage() {
           <div className="relative mb-8 text-center">
             <h2
               id="featured-title"
-              className="section-title font-display text-3xl font-bold italic text-cocoa sm:text-4xl"
+              className="section-title font-display text-3xl font-bold italic text-bordeaux sm:text-4xl"
             >
               Nos produits phares
             </h2>
@@ -131,20 +131,20 @@ export default async function HomePage() {
       <section className="container-page grid gap-6 pb-14 lg:grid-cols-[1.45fr_1fr]">
         <div
           id="a-propos"
-          className={`relative grid scroll-mt-24 overflow-hidden rounded-2xl bg-gradient-to-br from-[#fbefe9] to-blush sm:grid-cols-[1.1fr_1fr] ${
+          className={`relative grid scroll-mt-24 overflow-hidden rounded-2xl bg-gradient-to-br from-mist to-blush sm:grid-cols-[1.1fr_1fr] ${
             reviews.length === 0 ? "lg:col-span-2" : ""
           }`}
         >
           <div className="relative z-10 p-7 sm:p-9">
             <h2 className="font-display leading-tight">
               {settings.about_title ? (
-                <span className="text-2xl font-bold text-cocoa sm:text-3xl">
+                <span className="text-2xl font-bold text-bordeaux sm:text-3xl">
                   {settings.about_title}
                 </span>
               ) : (
                 <>
                   <span className="block text-lg font-semibold">À propos de</span>
-                  <span className="block text-2xl font-bold text-cocoa sm:text-3xl">
+                  <span className="block text-2xl font-bold text-bordeaux sm:text-3xl">
                     {settings.store_name}
                   </span>
                 </>
@@ -163,7 +163,7 @@ export default async function HomePage() {
                   const Icon = HIGHLIGHT_ICONS[index];
                   return (
                     <li key={highlight} className="flex items-start gap-2 text-[0.6875rem] leading-snug">
-                      <Icon className="size-5 shrink-0 text-cocoa" strokeWidth={1.5} aria-hidden="true" />
+                      <Icon className="size-5 shrink-0 text-bordeaux" strokeWidth={1.5} aria-hidden="true" />
                       {highlight}
                     </li>
                   );
@@ -186,7 +186,7 @@ export default async function HomePage() {
               />
             ) : (
               <div className="flex h-full items-center justify-center" aria-hidden="true">
-                <LogoMark className="size-40 text-caramel/40" />
+                <LogoMark className="size-40 text-gold/40" />
               </div>
             )}
           </div>
@@ -194,7 +194,7 @@ export default async function HomePage() {
 
         {reviews.length > 0 && (
           <div id="avis" className="flex scroll-mt-24 flex-col rounded-2xl bg-mist p-7 sm:p-9">
-            <h2 className="font-display text-2xl font-bold text-cocoa">Elles nous font confiance</h2>
+            <h2 className="font-display text-2xl font-bold text-bordeaux">Elles nous font confiance</h2>
             <p className="mb-6 mt-1 text-sm text-ink-soft">Découvrez les avis de nos clientes</p>
             <ReviewCarousel reviews={reviews} />
           </div>
@@ -256,7 +256,7 @@ function InfoItem({
   return (
     <div className="flex gap-4">
       <span
-        className="flex size-14 shrink-0 items-center justify-center rounded-full bg-surface text-cocoa"
+        className="flex size-14 shrink-0 items-center justify-center rounded-full bg-surface text-bordeaux"
         aria-hidden="true"
       >
         <Icon className="size-6" strokeWidth={1.5} />

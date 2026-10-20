@@ -194,7 +194,7 @@ export function ProductForm({
             name="trackStock"
             checked={trackStock}
             onChange={(event) => setTrackStock(event.target.checked)}
-            className="size-4 accent-cocoa"
+            className="size-4 accent-bordeaux"
           />
           Suivre le stock (sinon, le produit est toujours disponible)
         </label>
@@ -222,7 +222,7 @@ export function ProductForm({
             type="checkbox"
             name="isActive"
             defaultChecked={product?.is_active ?? false}
-            className="mt-0.5 size-4 accent-cocoa"
+            className="mt-0.5 size-4 accent-bordeaux"
           />
           <span>
             <span className="font-semibold">Publié sur la boutique</span>
@@ -236,7 +236,7 @@ export function ProductForm({
             type="checkbox"
             name="isFeatured"
             defaultChecked={product?.is_featured ?? false}
-            className="mt-0.5 size-4 accent-cocoa"
+            className="mt-0.5 size-4 accent-bordeaux"
           />
           <span>
             <span className="font-semibold">Mis en avant sur la page d&apos;accueil</span>

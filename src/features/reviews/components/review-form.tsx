@@ -47,7 +47,7 @@ export function ReviewForm({ productId }: { productId: string }) {
                 required
                 aria-describedby={errors.rating ? "rating-error" : undefined}
               />
-              <span className="flex h-10 min-w-12 items-center justify-center rounded-full border border-line px-3 text-sm peer-checked:border-cocoa peer-checked:bg-cocoa peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-cocoa">
+              <span className="flex h-10 min-w-12 items-center justify-center rounded-full border border-line px-3 text-sm peer-checked:border-bordeaux peer-checked:bg-bordeaux peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-bordeaux">
                 {value} <span aria-hidden="true">★</span>
                 <span className="sr-only">sur 5</span>
               </span>
@@ -55,7 +55,7 @@ export function ReviewForm({ productId }: { productId: string }) {
           ))}
         </div>
         {errors.rating && (
-          <p id="rating-error" className="mt-1 text-sm text-clay" role="alert">
+          <p id="rating-error" className="mt-1 text-sm text-error" role="alert">
             {errors.rating}
           </p>
         )}

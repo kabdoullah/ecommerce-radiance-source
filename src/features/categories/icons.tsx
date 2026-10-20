@@ -40,7 +40,7 @@ export function CategoryIconBadge({
   const Icon = CATEGORY_ICONS[icon].icon;
   return (
     <span
-      className={`flex items-center justify-center rounded-full bg-blush text-cocoa ${className}`}
+      className={`flex items-center justify-center rounded-full bg-blush text-bordeaux ${className}`}
       aria-hidden="true"
     >
       <Icon className="size-1/2" strokeWidth={1.4} />

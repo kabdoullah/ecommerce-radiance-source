@@ -29,7 +29,7 @@ export function ProductImage({
         />
       ) : (
         <div className="flex h-full items-center justify-center" aria-hidden="true">
-          <LogoMark className="size-14 text-cocoa/25" />
+          <LogoMark className="size-14 text-bordeaux/25" />
         </div>
       )}
     </div>

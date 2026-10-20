@@ -115,7 +115,7 @@ async function ProductContent({ params }: Pick<PageProps<"/produits/[slug]">, "p
           {product.subtitle && <p className="mt-1 text-ink-soft">{product.subtitle}</p>}
 
           <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <p className="text-3xl font-bold text-cocoa">
+            <p className="text-3xl font-bold text-bordeaux">
               {onSale && <span className="sr-only">Prix réduit : </span>}
               {formatPrice(product.price)}
             </p>
@@ -149,7 +149,7 @@ async function ProductContent({ params }: Pick<PageProps<"/produits/[slug]">, "p
                 const Icon = HIGHLIGHT_ICONS[index];
                 return (
                   <li key={highlight} className="flex items-center gap-2 text-xs leading-snug">
-                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-blush text-cocoa">
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-blush text-bordeaux">
                       <Icon className="size-4" strokeWidth={1.6} aria-hidden="true" />
                     </span>
                     {highlight}
@@ -182,7 +182,7 @@ async function ProductContent({ params }: Pick<PageProps<"/produits/[slug]">, "p
             <ul className="space-y-3 rounded-card border border-line bg-surface p-4">
               {sideInfo.map(({ icon: Icon, text }) => (
                 <li key={text} className="flex items-center gap-2">
-                  <Icon className="size-4 shrink-0 text-caramel" aria-hidden="true" />
+                  <Icon className="size-4 shrink-0 text-gold" aria-hidden="true" />
                   {text}
                 </li>
               ))}
@@ -190,7 +190,7 @@ async function ProductContent({ params }: Pick<PageProps<"/produits/[slug]">, "p
           )}
           {settings.payment_summary && (
             <div className="flex items-center gap-3 rounded-card border border-line bg-surface p-4">
-              <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-blush text-cocoa">
+              <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-blush text-bordeaux">
                 <Wallet className="size-4" aria-hidden="true" />
               </span>
               {settings.payment_summary}
@@ -209,7 +209,7 @@ async function ProductContent({ params }: Pick<PageProps<"/produits/[slug]">, "p
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Partager sur WhatsApp"
-              className="text-cocoa hover:text-cocoa-deep"
+              className="text-bordeaux hover:text-bordeaux-deep"
             >
               <WhatsAppIcon className="size-4" />
             </a>
@@ -218,7 +218,7 @@ async function ProductContent({ params }: Pick<PageProps<"/produits/[slug]">, "p
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Partager sur Facebook"
-              className="text-cocoa hover:text-cocoa-deep"
+              className="text-bordeaux hover:text-bordeaux-deep"
             >
               <FacebookIcon className="size-4" />
             </a>
@@ -228,7 +228,7 @@ async function ProductContent({ params }: Pick<PageProps<"/produits/[slug]">, "p
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Notre Instagram"
-                className="text-cocoa hover:text-cocoa-deep"
+                className="text-bordeaux hover:text-bordeaux-deep"
               >
                 <InstagramIcon className="size-4" />
               </a>
@@ -243,7 +243,7 @@ async function ProductContent({ params }: Pick<PageProps<"/produits/[slug]">, "p
         className="mt-16 grid scroll-mt-24 gap-8 md:grid-cols-2"
       >
         <div>
-          <h2 id="reviews-title" className="font-display text-2xl font-bold text-cocoa">
+          <h2 id="reviews-title" className="font-display text-2xl font-bold text-bordeaux">
             Avis clients
           </h2>
           {reviews.length === 0 ? (
@@ -271,7 +271,7 @@ async function ProductContent({ params }: Pick<PageProps<"/produits/[slug]">, "p
         <section aria-labelledby="related-title" className="mt-16">
           <h2
             id="related-title"
-            className="section-title mb-8 font-display text-2xl font-bold italic text-cocoa sm:text-3xl"
+            className="section-title mb-8 font-display text-2xl font-bold italic text-bordeaux sm:text-3xl"
           >
             Vous aimerez aussi
           </h2>

@@ -27,7 +27,7 @@ export default async function OrderDetailPage({ params }: PageProps<"/admin/comm
 
   return (
     <>
-      <Link href="/admin/commandes" className="text-sm text-cocoa hover:underline">
+      <Link href="/admin/commandes" className="text-sm text-bordeaux hover:underline">
         Retour aux commandes
       </Link>
       <div className="mt-4">

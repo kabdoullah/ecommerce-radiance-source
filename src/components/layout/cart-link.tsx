@@ -17,7 +17,7 @@ export function CartLink() {
       {count > 0 && (
         <span
           aria-hidden="true"
-          className="absolute right-0.5 top-0.5 flex min-w-5 items-center justify-center rounded-full bg-cocoa px-1 text-[0.6875rem] font-bold leading-5 text-white"
+          className="absolute right-0.5 top-0.5 flex min-w-5 items-center justify-center rounded-full bg-fuchsia px-1 text-[0.6875rem] font-bold leading-5 text-white"
         >
           {count > 99 ? "99+" : count}
         </span>

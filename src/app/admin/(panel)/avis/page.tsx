@@ -45,7 +45,7 @@ export default async function AdminReviewsPage({ searchParams }: PageProps<"/adm
             href={`/admin/avis?statut=${value}`}
             aria-current={status === value ? "page" : undefined}
             className={`rounded-full px-4 py-2 text-sm font-medium ${
-              status === value ? "bg-cocoa text-white" : "bg-surface hover:bg-mist"
+              status === value ? "bg-bordeaux text-white" : "bg-surface hover:bg-mist"
             }`}
           >
             {label}
@@ -64,7 +64,7 @@ export default async function AdminReviewsPage({ searchParams }: PageProps<"/adm
               <div className="flex flex-wrap items-baseline justify-between gap-2 text-sm">
                 <p>
                   <span className="font-semibold">{review.author_name}</span>
-                  <span className="ml-2 text-caramel" aria-label={`${review.rating} sur 5`}>
+                  <span className="ml-2 text-gold" aria-label={`${review.rating} sur 5`}>
                     {"★".repeat(review.rating)}
                     <span className="text-line">{"★".repeat(5 - review.rating)}</span>
                   </span>

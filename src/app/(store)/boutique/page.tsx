@@ -179,8 +179,8 @@ function CategoryPill({
       aria-current={active ? "page" : undefined}
       className={`block rounded-full border px-4 py-2 text-sm font-medium ${
         active
-          ? "border-cocoa bg-cocoa text-white"
-          : "border-line bg-surface hover:border-cocoa"
+          ? "border-bordeaux bg-bordeaux text-white"
+          : "border-line bg-surface hover:border-bordeaux"
       }`}
     >
       {children}

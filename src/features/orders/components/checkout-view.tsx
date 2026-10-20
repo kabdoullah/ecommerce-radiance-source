@@ -218,7 +218,7 @@ export function CheckoutView({
         </dl>
         <Link
           href="/panier"
-          className="mt-5 inline-block text-sm font-semibold text-cocoa hover:underline"
+          className="mt-5 inline-block text-sm font-semibold text-bordeaux hover:underline"
         >
           Modifier le panier
         </Link>

@@ -32,7 +32,7 @@ export function Logo({
   logoPath: string | null;
   tone?: "dark" | "light";
 }) {
-  const nameColor = tone === "dark" ? "text-cocoa" : "text-white";
+  const nameColor = tone === "dark" ? "text-bordeaux" : "text-white";
   return (
     <span className="inline-flex items-center gap-3">
       {logoPath ? (
@@ -45,7 +45,7 @@ export function Logo({
           priority
         />
       ) : (
-        <LogoMark className="size-10 text-caramel sm:size-12" />
+        <LogoMark className="size-10 text-gold sm:size-12" />
       )}
       <span className="flex flex-col">
         <span className={`font-display text-xl font-semibold leading-tight sm:text-2xl ${nameColor}`}>
@@ -53,7 +53,7 @@ export function Logo({
         </span>
         {tagline && (
           <span
-            className={`text-[0.6875rem] tracking-wide ${tone === "dark" ? "text-caramel" : "text-white/70"}`}
+            className={`text-[0.6875rem] tracking-wide ${tone === "dark" ? "text-ink-soft" : "text-white/70"}`}
           >
             {tagline}
           </span>

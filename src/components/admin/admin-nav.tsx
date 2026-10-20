@@ -39,7 +39,7 @@ export function AdminNavLinks({ pathname }: { pathname: string | null }) {
         href="/admin"
         className="hidden items-center gap-2 px-6 py-6 font-display text-xl lg:flex"
       >
-        <LogoMark className="size-6 text-cocoa" />
+        <LogoMark className="size-6 text-bordeaux" />
         Administration
       </Link>
       <ul className="flex gap-1 overflow-x-auto px-3 py-2 lg:flex-col lg:py-0">
@@ -49,7 +49,7 @@ export function AdminNavLinks({ pathname }: { pathname: string | null }) {
               href={href}
               aria-current={isActive(href) ? "page" : undefined}
               className={`flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium ${
-                isActive(href) ? "bg-cocoa text-white" : "text-ink hover:bg-mist"
+                isActive(href) ? "bg-bordeaux text-white" : "text-ink hover:bg-mist"
               }`}
             >
               <Icon className="size-4" aria-hidden="true" />
@@ -59,7 +59,7 @@ export function AdminNavLinks({ pathname }: { pathname: string | null }) {
         ))}
       </ul>
       <div className="hidden px-6 py-6 lg:block">
-        <Link href="/" target="_blank" className="text-sm text-cocoa hover:underline">
+        <Link href="/" target="_blank" className="text-sm text-bordeaux hover:underline">
           Voir la boutique
           <span className="sr-only"> (nouvel onglet)</span>
         </Link>

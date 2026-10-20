@@ -21,7 +21,7 @@ export async function SiteHeader() {
   return (
     <>
       {announcements.length > 0 && (
-        <div className="bg-cocoa text-white">
+        <div className="bg-bordeaux text-white">
           <ul className="container-page flex h-9 items-center justify-center gap-10 text-xs md:justify-between">
             {announcements.map(({ icon: Icon, text }, index) => (
               <li

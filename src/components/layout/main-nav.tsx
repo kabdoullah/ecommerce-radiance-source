@@ -113,8 +113,8 @@ export function MainNavLinks({
               href={item.href}
               onClick={() => onNavigate?.(item.href)}
               aria-current={active ? (item.href.startsWith("/#") ? "location" : "page") : undefined}
-              className={`border-b-2 py-1.5 hover:text-cocoa ${
-                active ? "border-cocoa text-cocoa" : "border-transparent"
+              className={`border-b-2 py-1.5 hover:text-bordeaux ${
+                active ? "border-fuchsia text-bordeaux" : "border-transparent"
               }`}
             >
               {item.label}
