@@ -203,7 +203,8 @@ export default async function HomePage() {
 
       {/* Livraison, paiement, commande, contact */}
       <section id="livraison" aria-label="Livraison et paiement" className="scroll-mt-24 bg-mist py-10">
-        <div className="container-page grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Dernière colonne à la largeur du bouton : le numéro de téléphone ne se coupe pas. */}
+        <div className="container-page grid gap-8 sm:grid-cols-2 lg:grid-cols-[repeat(3,minmax(0,1fr))_auto]">
           {settings.delivery_info && (
             <InfoItem icon={Truck} title="Livraison">
               {settings.delivery_info}
@@ -229,7 +230,7 @@ export default async function HomePage() {
                   href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={buttonStyles("primary", "sm", "mt-3")}
+                  className={buttonStyles("primary", "sm", "mt-3 whitespace-nowrap")}
                 >
                   <WhatsAppIcon className="size-4" />
                   {settings.contact_phone || "Écrire sur WhatsApp"}
