@@ -2,7 +2,12 @@ import { describe, expect, it } from "vitest";
 import { checkoutSchema, normalizePhone } from "./checkout-schema";
 import { describeOrderError } from "./order-errors";
 import { ORDER_STATUSES, allowedNextStatuses, canTransition, isFinalStatus } from "./status";
-import { buildOrderMessage, buildWhatsAppUrl, type OrderSummary } from "./whatsapp";
+import {
+  buildOrderMessage,
+  buildWhatsAppUrl,
+  toAndroidIntentUrl,
+  type OrderSummary,
+} from "./whatsapp";
 
 const PRODUCT = "11111111-1111-4111-8111-111111111111";
 
@@ -107,6 +112,18 @@ describe("WhatsApp message", () => {
   it("builds an encoded wa.me link", () => {
     const url = buildWhatsAppUrl("2250700000000", "Commande n° 1 & total");
     expect(url).toBe("https://wa.me/2250700000000?text=Commande%20n%C2%B0%201%20%26%20total");
+  });
+
+  it("opens the WhatsApp app directly on Android, falling back to wa.me", () => {
+    const waMe = buildWhatsAppUrl("2250700000000", "Commande n° 1 & total");
+    expect(toAndroidIntentUrl(waMe)).toBe(
+      "intent://send?phone=2250700000000&text=Commande%20n%C2%B0%201%20%26%20total" +
+        `#Intent;scheme=whatsapp;S.browser_fallback_url=${encodeURIComponent(waMe)};end`,
+    );
+    expect(toAndroidIntentUrl("https://wa.me/2250700000000")).toMatch(
+      /^intent:\/\/send\?phone=2250700000000#Intent;/,
+    );
+    expect(toAndroidIntentUrl("https://wa.me/?text=Kiara")).toMatch(/^intent:\/\/send\?text=Kiara#/);
   });
 });
 

@@ -8,6 +8,7 @@ import {
   WhatsAppIcon,
 } from "@/components/brand/social-icons";
 import { getStoreSettings } from "@/features/store-settings/queries";
+import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { STORE_NAV } from "@/config/navigation";
 
 export async function SiteFooter() {
@@ -49,19 +50,22 @@ export async function SiteFooter() {
           <div>
             <p className="mb-2 text-sm font-semibold text-white">Suivez-nous</p>
             <ul className="flex gap-2">
-              {socials.map(({ label, href, icon: Icon }) => (
-                <li key={label}>
-                  <a
-                    href={href!}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={label}
-                    className="flex size-9 items-center justify-center rounded-full bg-white text-bordeaux-deep hover:bg-blush"
-                  >
-                    <Icon className="size-4" />
-                  </a>
-                </li>
-              ))}
+              {socials.map(({ label, href, icon: Icon }) => {
+                const Anchor = label === "WhatsApp" ? WhatsAppLink : "a";
+                return (
+                  <li key={label}>
+                    <Anchor
+                      href={href!}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      className="flex size-9 items-center justify-center rounded-full bg-white text-bordeaux-deep hover:bg-blush"
+                    >
+                      <Icon className="size-4" />
+                    </Anchor>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         )}

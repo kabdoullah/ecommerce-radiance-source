@@ -7,6 +7,7 @@ import { FacebookIcon, InstagramIcon, WhatsAppIcon } from "@/components/brand/so
 import { ProductGrid } from "@/components/shared/product-card";
 import { StockLabel } from "@/components/shared/price";
 import { Stars } from "@/components/shared/stars";
+import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { CURRENCY_CODE, siteUrl } from "@/config/site";
 import { AddToCart } from "@/features/products/components/add-to-cart";
 import { ProductGallery } from "@/features/products/components/product-gallery";
@@ -204,7 +205,7 @@ async function ProductContent({ params }: Pick<PageProps<"/produits/[slug]">, "p
           )}
           <div className="flex items-center gap-3 px-1 pt-1">
             <span className="text-ink-soft">Partager :</span>
-            <a
+            <WhatsAppLink
               href={`https://wa.me/?text=${encodeURIComponent(`${product.name} – ${productUrl}`)}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -212,7 +213,7 @@ async function ProductContent({ params }: Pick<PageProps<"/produits/[slug]">, "p
               className="text-bordeaux hover:text-bordeaux-deep"
             >
               <WhatsAppIcon className="size-4" />
-            </a>
+            </WhatsAppLink>
             <a
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(productUrl)}`}
               target="_blank"

@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { z } from "zod";
 import { PageHeader, Panel } from "@/components/admin/page-header";
 import { buttonStyles } from "@/components/ui/button";
+import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { getOrder } from "@/features/orders/admin-queries";
 import {
   OrderNoteForm,
@@ -138,7 +139,7 @@ export default async function OrderDetailPage({ params }: PageProps<"/admin/comm
                 </div>
               )}
             </dl>
-            <a
+            <WhatsAppLink
               href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -146,7 +147,7 @@ export default async function OrderDetailPage({ params }: PageProps<"/admin/comm
             >
               <MessageCircle className="size-4" aria-hidden="true" />
               Écrire au client sur WhatsApp
-            </a>
+            </WhatsAppLink>
           </Panel>
         </div>
 
