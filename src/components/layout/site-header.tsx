@@ -1,11 +1,11 @@
-import { Menu, Phone, Search, Truck, Wallet } from "lucide-react";
+import { Phone, Search, Truck, Wallet } from "lucide-react";
 import Link from "next/link";
 import { Suspense } from "react";
 import { Logo } from "@/components/brand/logo";
 import { getStoreSettings } from "@/features/store-settings/queries";
 import { CartLink } from "./cart-link";
-import { STORE_NAV } from "@/config/navigation";
 import { MainNav, MainNavLinks } from "./main-nav";
+import { MobileMenu } from "./mobile-menu";
 
 export async function SiteHeader() {
   const settings = await getStoreSettings();
@@ -67,28 +67,7 @@ export async function SiteHeader() {
               <Search className="size-5" aria-hidden="true" />
             </Link>
             <CartLink />
-            <details className="relative lg:hidden">
-              <summary
-                className="flex size-11 cursor-pointer list-none items-center justify-center rounded-full hover:bg-mist [&::-webkit-details-marker]:hidden"
-                aria-label="Menu"
-              >
-                <Menu className="size-5" aria-hidden="true" />
-              </summary>
-              <nav
-                aria-label="Navigation mobile"
-                className="absolute right-0 top-12 w-60 rounded-card border border-line bg-surface p-2 shadow-lg"
-              >
-                <ul>
-                  {STORE_NAV.map((item) => (
-                    <li key={item.href}>
-                      <Link href={item.href} className="block rounded px-3 py-3 text-sm hover:bg-mist">
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </details>
+            <MobileMenu />
           </div>
         </div>
       </header>
