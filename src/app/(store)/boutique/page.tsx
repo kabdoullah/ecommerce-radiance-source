@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { AutoSubmitSelect } from "@/components/shared/auto-submit-select";
 import { ProductGrid } from "@/components/shared/product-card";
+import { SearchInput } from "@/components/shared/search-input";
 import { buttonStyles } from "@/components/ui/button";
 import { inputStyles } from "@/components/ui/field";
 import { getActiveCategories } from "@/features/categories/queries";
@@ -55,10 +56,9 @@ async function Catalog({ searchParams }: Pick<PageProps<"/boutique">, "searchPar
               className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-ink-soft"
               aria-hidden="true"
             />
-            <input
+            <SearchInput
               id="q"
               name="q"
-              type="search"
               defaultValue={params.query}
               placeholder="Rechercher un produit"
               maxLength={80}
